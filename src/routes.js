@@ -6,7 +6,7 @@ const routes = [
         component: HomeView
     },
     {
-        name: '/home',
+        name: 'home',
         component: HomeView
     },
 ]
