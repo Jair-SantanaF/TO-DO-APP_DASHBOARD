@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     export let placeholder = "";
     export let color = "primary";
     export let value = "";
@@ -11,6 +13,17 @@
     export let isHovered = false;
     export let isFocus = false;
     export let isLoading = false;
+
+    const dispatch = createEventDispatcher()
+
+    function onkeyup(event) {
+
+        if (event.code === 'Enter') {
+            dispatch('enter', value)
+        }
+        
+    }
+
 </script>
 
 <div class="field">
@@ -30,6 +43,7 @@
 
         <input
             bind:value
+            on:keyup={ onkeyup }
             type="text"
             class="input is-{ color } is-{ size }"
             placeholder={ placeholder }
