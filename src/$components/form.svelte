@@ -1,5 +1,6 @@
 <script>
 
+    import { ModalStore } from "../stores";
     import Button from '../$components/button.svelte'
 
     export let loading = false
@@ -12,6 +13,6 @@
     <slot></slot>
 
     <Button type='submit' text='Confirmar' color='primary' isLoading={ loading }/>
-    <Button text='Cancelar' color='danger'/>
+    <Button on:click={ ModalStore.close } text='Cancelar' color='danger'/>
 
 </form>

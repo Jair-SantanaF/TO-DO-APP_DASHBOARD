@@ -17,6 +17,7 @@
 </script>
 
 <button
+    on:click
     type={ type }
     class="button is-{ color } is-{ size } "
     disabled={ isDisabled }

@@ -8,9 +8,9 @@ const conexionError = {
 
 export default {
     getTasks,
-//     createCourse,
-//     updateCourse,
-//     deleteCourse,
+    createTask,
+    updateTask,
+    deleteTask,
 }
 
 function getTasks(query) {
@@ -32,58 +32,58 @@ function getTasks(query) {
     })
 }
 
-// function createCourse(data) {
-//     return new Promise((resolve, reject) => {
+function createTask(data) {
+    return new Promise((resolve, reject) => {
 
-//         const token = localStorage.getItem('token')
+        const token = localStorage.getItem('token')
 
-//         Superagent
-//             .post('http://localhost:7777/courses')
-//             .set('token', token)
-//             .send(data)
-//             .end((error, resp) => {
+        Superagent
+            .post('http://localhost:7777/tasks')
+            .set('token', token)
+            .send(data)
+            .end((error, resp) => {
                 
-//                 if(error)
-//                     return resolve( resp? resp.body : conexionError )
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
 
-//                 resolve(resp.body)
-//             })
-//     })
-// }
+                resolve(resp.body)
+            })
+    })
+}
 
-// function updateCourse( courseId, data ) {
-//     return new Promise((resolve, reject) => {
+function updateTask( taskId, data ) {
+    return new Promise((resolve, reject) => {
 
-//         const token = localStorage.getItem('token')
+        const token = localStorage.getItem('token')
 
-//         Superagent
-//             .put(`http://localhost:7777/courses/${ courseId }`)
-//             .set('token', token)
-//             .send(data)
-//             .end((error, resp) => {
+        Superagent
+            .put(`http://localhost:7777/tasks/${ taskId }`)
+            .set('token', token)
+            .send(data)
+            .end((error, resp) => {
                 
-//                 if(error)
-//                     return resolve( resp? resp.body : conexionError )
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
 
-//                 resolve(resp.body)
-//             })
-//     })
-// }
+                resolve(resp.body)
+            })
+    })
+}
 
-// function deleteCourse( courseId ) {
-//     return new Promise((resolve, reject) => {
+function deleteTask( taskId ) {
+    return new Promise((resolve, reject) => {
 
-//         const token = localStorage.getItem('token')
+        const token = localStorage.getItem('token')
 
-//         Superagent
-//             .delete(`http://localhost:7777/courses/${ courseId }`)
-//             .set('token', token)
-//             .end((error, resp) => {
+        Superagent
+            .delete(`http://localhost:7777/tasks/${ taskId }`)
+            .set('token', token)
+            .end((error, resp) => {
                 
-//                 if(error)
-//                     return resolve( resp? resp.body : conexionError )
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
 
-//                 resolve(resp.body)
-//             })
-//     })
-// }
+                resolve(resp.body)
+            })
+    })
+}
