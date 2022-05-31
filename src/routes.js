@@ -2,6 +2,7 @@ import HomeView from './$views/home.view.svelte'
 import UserView from './$views/users.view.svelte'
 import LoginView from './$views/login.view.svelte'
 import TasksView from './$views/tasks.view.svelte'
+import { UserStore } from './stores'
 
 const routes = [
     {
@@ -40,6 +41,11 @@ function needLogin() {
 function isLogin() {
     
     const token = localStorage.getItem('token')
+
+    if (token) {
+        const user = localStorage.getItem('user')
+        UserStore.set(JSON.parse(user))
+    }
 
     return token
 }

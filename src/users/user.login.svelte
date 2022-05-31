@@ -22,6 +22,7 @@
 
         const token = resp.data.session.token
         localStorage.setItem('token', token)
+        localStorage.setItem('user', JSON.stringify(resp.data.user))
 
         navigateTo('home')
 

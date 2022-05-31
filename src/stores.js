@@ -6,7 +6,11 @@ export let TaskStore = Model('Task')
 
 export let ModalStore = Modal(null)
 
-export let TeacherStore = Model('Teacher')
+export let UserStore = Model('User')
+
+export let SubTask = Model('SubTask')
+
+export let SubTasksStore = Collection('SubTasks')
 
 function Collection(name, state = []) {
 
