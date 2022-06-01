@@ -34,6 +34,7 @@
 
     function updateData() {
         data = {
+            status: $TaskStore.status,
             name: $TaskStore.name,
             description: $TaskStore.description,
             endDate: $TaskStore.endDate,

@@ -12,6 +12,10 @@ export let SubTask = Model('SubTask')
 
 export let SubTasksStore = Collection('SubTasks')
 
+export let Status = Model('Status')
+
+export let StatusStore = Collection('Status')
+
 function Collection(name, state = []) {
 
     const {subscribe, update, set} = writable(state)

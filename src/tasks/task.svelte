@@ -1,7 +1,7 @@
 <script>
 
     import Moment from "moment"
-    import { TaskStore } from "../stores";
+    import { TaskStore } from "../stores"
 
 </script>
 
@@ -41,6 +41,12 @@
         <div class="column">
             <div class="title is-4">Fecha de creacion</div>
             <div class="subtitle is-5">{ Moment($TaskStore.created).format('DD/MM/YYYY') }</div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="title is-4">status</div>
+            <div class="subtitle is-5">{($TaskStore.status)}</div>
         </div>
     </div>
 

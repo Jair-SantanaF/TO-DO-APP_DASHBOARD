@@ -8,6 +8,7 @@ const conexionError = {
 
 export default {
     getTasks,
+    getStatus,
     createTask,
     updateTask,
     deleteTask,
@@ -22,6 +23,24 @@ function getTasks(query) {
             .get('http://localhost:7777/tasks')
             .set('token', token)
             .query(query)
+            .end((error, resp) => {
+                
+                if(error)
+                    return resolve( resp? resp.body : conexionError )
+
+                resolve(resp.body)
+            })
+    })
+}
+
+function getStatus() {
+    return new Promise((resolve, reject) => {
+
+        const token = localStorage.getItem('token')
+
+        Superagent
+            .get('http://localhost:7777/tasks/status')
+            .set('token', token)
             .end((error, resp) => {
                 
                 if(error)

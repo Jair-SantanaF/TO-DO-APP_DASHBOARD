@@ -1,15 +1,10 @@
 <script>
 
-    let isCheck = false
-
-    function holamundo() {
-        console.log(isCheck);
-    }
+    export let isCheck = true
 
 </script>
 
 
 <label class="checkbox">
-    <input on:change={ holamundo } bind:checked={ isCheck } type="checkbox"> 
-    Remember me
+    <input on:change bind:checked={ isCheck } type="checkbox"> 
 </label>

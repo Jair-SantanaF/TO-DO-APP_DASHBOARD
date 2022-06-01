@@ -7,7 +7,9 @@
     import Input from '../$components/input.svelte'
     import Icon from '../$components/icon.svelte'
     import Button from "../$components/button.svelte"
+    import CheckBox from "../$components/checkbox.svelte"
 
+    let data = {}
     let query = {}
     let loading = false
 
@@ -23,6 +25,18 @@
             return error = resp.error.message
     
         TasksStore.set(resp.data.tasks)
+
+    }
+
+    async function updateTask(task) {
+
+        data.status = !task.status
+        const resp = await TasksService.updateTask(task._id, data)
+
+        if(resp.error)
+            return error = resp.error.message
+
+        TasksStore.replace(resp.data)
 
     }
 
@@ -48,12 +62,15 @@
             <th>Categoria</th>
             <th>Descripcion</th>
             <th>Fecha de termino</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
             {#each $TasksStore as task, index}
                 <tr>
                     <td>{ index + 1 }</td>
+                    <td><CheckBox on:change={ () => updateTask(task) } bind:isCheck={ task.status }/></td>
                     <td>{ task.name }</td>
                     <td>{ task.category }</td>
                     <td>{ task.description }</td>

@@ -1,6 +1,6 @@
 <script>
     import Moment from "moment"
-    import { TasksStore, TaskStore, SubTasksStore } from "../stores"
+    import { SubTasksStore } from "../stores"
 
     import SubTasksService from '../$services/subtasks.service'
 
