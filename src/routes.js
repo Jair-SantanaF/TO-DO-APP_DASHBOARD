@@ -1,5 +1,5 @@
 import HomeView from './$views/home.view.svelte'
-import UserView from './$views/users.view.svelte'
+import UserCreateView from './$views/userCreate.view.svelte'
 import LoginView from './$views/login.view.svelte'
 import TasksView from './$views/tasks.view.svelte'
 import { UserStore } from './stores'
@@ -21,9 +21,9 @@ const routes = [
         onlyIf: {guard: needLogin, redirect: 'home'}
     },
     {
-        name: 'user',
-        component: UserView,
-        onlyIf: {guard: isLogin, redirect: 'login'}
+        name: 'userCreate',
+        component: UserCreateView,
+        onlyIf: {guard: needLogin, redirect: 'home'}
     },
     {
         name: 'tasks',

@@ -14,7 +14,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-redundant-roles -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <!-- svelte-ignore a11y-missing-attribute -->
         <a class="navbar-item" on:click={() => navigateTo("home")}>

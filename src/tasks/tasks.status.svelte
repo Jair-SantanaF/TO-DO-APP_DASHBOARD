@@ -95,16 +95,20 @@ async function getStatus() {
 
 <section class="wwww">
     <div class="container">
-      <div class="row mt-5">
-        <div class="col">
-          <div class="card-container" id="demo">
-            {#each $StatusStore as status}
-              <div class="cardww" tabindex="0">
-                <h2>{status._id === true ? "Tareas Completadas" : "Tareas pendientes"} { status.total }</h2>
-              </div>
-            {/each}
+      <div class="title">Resumen de tareas</div>
+      {#if !$StatusStore.length}
+        <div class="sub-title">Registra tu primer tarea...</div>
+      {/if}
+        <div class="row mt-5">
+          <div class="col">
+            <div class="card-container" id="demo">
+              {#each $StatusStore as status}
+                <div class="cardww" tabindex="0">
+                  <h2>{status._id === true ? "Tareas Completadas" : "Tareas pendientes"} { status.total }</h2>
+                </div>
+              {/each}
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </section>

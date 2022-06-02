@@ -1,8 +1,8 @@
 <script>
-
     import { navigateTo } from "svelte-router-spa"
 
-    import UserLogin from "../users/user.login.svelte"
+
+    import UserCreate from "../users/user.create.svelte"
     import Button from "../$components/button.svelte"
 
 </script>
@@ -33,7 +33,7 @@
     <div class="navbar-menu">
         <div class="navbar-end">
             <div class="navbar-item">
-                <Button text="Registrarse" on:click={() => navigateTo( "userCreate" )} icon="person-running"/>
+                <Button text="Iniciar Sesion" on:click={() => navigateTo( "login" )} icon="person-running"/>
             </div>
         </div>
     </div>
@@ -42,9 +42,8 @@
 <div class="columns">
     <div class="column"></div>
         <div class="column is-4 center">
-            <div class="title"> Iniciar Sesion </div>
-            <UserLogin/>
+            <div class="title"> Registrarse </div>
+            <UserCreate/>
         </div>
     <div class="column"></div>
 </div>
-

@@ -51,8 +51,8 @@
     </div>
     <div class="columns">
         <div class="column">
-            <Select bind:value={ data.reminder } label="Recordatorio" placeholder="Recordatorio" icon="bell" >
-                <option value="">Recordatorio</option>                
+            <Select bind:value={ data.reminder }>
+                <option value="">Selecciona un Recordatorio</option>                
                 <option value="hour">1 hora antes</option>
                 <option value="day">1 dia antes</option>
                 <option value="week">1 semana antes</option>
@@ -61,8 +61,8 @@
     </div>
     <div class="columns">
         <div class="column">
-            <Select bind:value={ data.category } label="Categoria" placeholder="Categoria" icon="circle-nodes" >
-                <option value="">Selecciona una opcion</option>
+            <Select bind:value={ data.category }>
+                <option value="">Seleciona una Categoria</option>
                 <option value="Home">Casa</option>
                 <option value="Work">Trabajo</option>
                 <option value="School">Escuela</option>

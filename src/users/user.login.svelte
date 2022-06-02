@@ -1,12 +1,12 @@
 <script>
 
-    import { navigateTo } from "svelte-router-spa";
-    import UserService from '../$services/users.service'
+    import { navigateTo } from "svelte-router-spa"
+    import UserService from "../$services/users.service"
 
-    import Input from "../$components/input.svelte";
-    import InputPassword from "../$components/input.password.svelte";
-    import Form from "../$components/form.svelte";
-
+    import Input from "../$components/input.svelte"
+    import InputPassword from "../$components/input.password.svelte"
+    import Form from "../$components/form.svelte"
+    
     let data = {}
     let loading = false
     let error = null
